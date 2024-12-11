@@ -3,83 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akansh Pandey - Mind-Blowing Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-<script src="js/app.js"></script>
+    <title>Coming Soon - Akansh Pandey</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="icon" type="image/png" href="Black Elegant Modern Name Initials Monogram Logo.png">
+        body {
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            color: #fff;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/black-paper.png');
+            animation: gradientShift 15s infinite alternate;
+        }
+
+        @keyframes gradientShift {
+            0% { background: linear-gradient(135deg, #1e3c72, #2a5298); }
+            100% { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); }
+        }
+
+        .container {
+            z-index: 10;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            letter-spacing: 4px;
+            animation: textPop 2s ease;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            animation: fadeIn 3s ease;
+        }
+
+        .countdown {
+            font-size: 2rem;
+            margin: 30px 0;
+            animation: fadeIn 4s ease;
+        }
+
+        .social-icons {
+            margin-top: 30px;
+            animation: fadeIn 5s ease;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 2rem;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes textPop {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
 </head>
 <body>
-
-   <header>
+    <div class="background"></div>
     <div class="container">
-        <img src="img/WhatsApp Image 2024-10-12 at 6.18.44 PM.jpeg" alt="Akansh Pandey" class="profile-photo">
-        <h1>Akansh Pandey</h1>
-        <h2>Cybersecurity Enthusiast & Developer</h2>
-        <p>Prepare to be mind-blown by this portfolio.</p>
-        <a href="#projects" class="btn">Check My Projects</a>
-    </div>
-</header>
-
-
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>I don't just solve problems, I break boundaries. From ethical hacking to archery, my life is about precision, power, and pushing the limits of what's possible. Hold on tight, you're about to witness something truly next-level.</p>
-        </div>
-    </section>
-
-    <section id="projects">
-        <div class="container">
-            <h2>My Projects</h2>
-
-             <div class="project">
-            <h3>Task Manager</h3>
-            <p>A simple task manager built with HTML that allows users to add tasks and stay organized.</p>
-            <ul>
-                <li><strong>Technologies Used:</strong> HTML</li>
-                <li><strong>Key Features:</strong> Users can add tasks in a simple input field. Lightweight and fast.</li>
-            </ul>
-        </div>
-
-        <!-- Project 2: Quill Share -->
-        <div class="project">
-            <h3>Quill Share</h3>
-            <p>Quill Share is a collaborative platform where users can share notes, videos, and PDFs, and communicate with each other seamlessly.</p>
-            <ul>
-                <li><strong>Technologies Used:</strong> PostgreSQL, Node.js, AWS, Nodemon, and more.</li>
-                <li><strong>Key Features:</strong> Share notes, PDFs, and videos. Communicate with other users. Secure architecture. Licensed under the MIT License.</li>
-            </ul>
+        <h1>Coming Soon</h1>
+        <h2>Something amazing is on its way!</h2>
+        <div class="countdown" id="countdown">00d 00h 00m 00s</div>
+        <div class="social-icons">
+            <a href="mailto:pandayakansh09@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.instagram.com/_whois_akansh" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/akansh-pandey-81861b237/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/akansh024" target="_blank"><i class="fab fa-github"></i></a>
         </div>
     </div>
-    </section>
 
-   <section id="contact" class="contact">
-    <h2 class="section-title">Contact Me</h2>
-    <p>Feel free to reach out for collaborations, bug bounty work, or even archery tips!</p>
+    <canvas class="particles"></canvas>
 
-    <!-- Contact Icons -->
-    <div class="contact-icons">
-        <a href="mailto:pandayakansh09@gmail.com" target="_blank">
-            <i class="fas fa-envelope"></i>
-        </a>
-        <a href="https://www.instagram.com/_whois_akansh?igshid=OGQ0ajRvNDR6eW1u" target="_blank">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/akansh-pandey-81861b237/" target="_blank">
-            <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://medium.com/@akatrigger53" target="_blank">
-            <i class="fab fa-medium"></i>
-        </a>
-        <a href="https://github.com/akansh024" target="_blank">
-            <i class="fab fa-github"></i>
-        </a>
-    </div>
-</section>
+    <script>
+        const countdown = document.getElementById('countdown');
 
-</footer>
+        // Countdown Timer Logic
+        const targetDate = new Date('2025-02-28T23:59:59').getTime(); // Extended date by 2 months
 
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            countdown.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        setInterval(updateCountdown, 1000);
+
+        // Particle Animation Logic
+        const canvas = document.querySelector('.particles');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particlesArray = [];
+        const numberOfParticles = 150; // Increased number of particles for better effect
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 5;
+                this.speedX = Math.random() * 2 - 1;
+                this.speedY = Math.random() * 2 - 1;
+                this.opacity = Math.random(); // Added opacity for better visuals
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // Boundary check to reset position if out of canvas
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                }
+
+                if (this.size > 0.2) this.size -= 0.01;
+            }
+
+            draw() {
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            for (let i = 0; i < numberOfParticles; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        function handleParticles() {
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+
+                if (particlesArray[i].size <= 0.2) {
+                    particlesArray.splice(i, 1);
+                    i--;
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            handleParticles();
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+    </script>
 </body>
 </html>
+
