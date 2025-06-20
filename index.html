@@ -149,6 +149,26 @@
             font-family: 'JetBrains Mono', monospace;
             max-width: 700px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            height: 250px; /* Fixed height */
+        }
+        
+        /* Terminal scroll indicator */
+        .terminal::after {
+            content: 'Scroll ↓';
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            color: var(--gray);
+            font-size: 0.8rem;
+            opacity: 0.6;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.4; }
+            50% { opacity: 0.8; }
+            100% { opacity: 0.4; }
         }
         
         .terminal-header {
@@ -179,6 +199,29 @@
             color: var(--primary);
             line-height: 1.8;
             font-size: 1rem;
+            height: 100%; /* Full height of terminal */
+            overflow-y: auto; /* Make content scrollable */
+            padding-right: 10px;
+        }
+        
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .terminal-content::-webkit-scrollbar {
+            width: 5px;
+        }
+        
+        .terminal-content::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .terminal-content::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+        
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .terminal-content {
+            scrollbar-width: thin; /* Firefox */
+            scrollbar-color: var(--primary) transparent; /* Firefox */
         }
         
         .terminal-content span {
@@ -595,6 +638,10 @@
             .terminal-content {
                 font-size: 0.9rem;
             }
+            
+            .terminal {
+                height: 220px; /* Slightly smaller on mobile */
+            }
         }
         
         /* Mobile Menu */
@@ -712,6 +759,9 @@
                         <br>
                         <p><span>akansh@root:~$</span> cat location.txt</p>
                         <p>Based in India</p>
+                        <br>
+                        <p><span>akansh@root:~$</span> ./connect.sh</p>
+                        <p>Ready to discuss cybersecurity opportunities...</p>
                     </div>
                 </div>
             </div>
@@ -1049,6 +1099,12 @@
                     }, 20);
                 }, 300 * index);
             });
+            
+            // Auto-scroll to bottom of terminal after typing
+            setTimeout(() => {
+                const terminalContent = document.querySelector('.terminal-content');
+                terminalContent.scrollTop = terminalContent.scrollHeight;
+            }, 3000);
         });
     </script>
 </body>
