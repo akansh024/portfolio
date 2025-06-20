@@ -124,7 +124,7 @@
         }
         
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 20px;
             line-height: 1.1;
@@ -223,16 +223,16 @@
         
         /* Sections */
         .section {
-            padding: 100px 0;
+            padding: 80px 0;
         }
         
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
         
         .section-title {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             margin-bottom: 15px;
             position: relative;
             display: inline-block;
@@ -492,7 +492,7 @@
         .social-links {
             display: flex;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 10px;
         }
         
         .social-links a {
@@ -565,6 +565,10 @@
             .contact-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
         }
         
         @media (max-width: 768px) {
@@ -573,16 +577,95 @@
             }
             
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .section-title {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             
             .projects-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .terminal-content {
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                flex-direction: column;
+                background: rgba(13, 17, 23, 0.95);
+                width: 100%;
+                padding: 20px;
+                transition: right 0.3s ease;
+                z-index: 999;
+                border-top: 1px solid rgba(0, 255, 157, 0.2);
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links a {
+                padding: 15px 0;
+                font-size: 1.2rem;
+            }
+        }
+        
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 255, 157, 0.1);
+            border: 1px solid var(--primary);
+            border-radius: 50%;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 100;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .scroll-top.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .scroll-top:hover {
+            background: var(--primary);
+            color: var(--darker);
+            box-shadow: 0 0 15px var(--primary);
         }
     </style>
 </head>
@@ -598,6 +681,9 @@
                     <a href="#events">Events</a>
                     <a href="#contact">Contact</a>
                 </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
             </nav>
         </div>
     </header>
@@ -619,13 +705,13 @@
                     </div>
                     <div class="terminal-content">
                         <p><span>akansh@root:~$</span> whoami</p>
-                        <p>BSc(Hons) Cyber Security Student | Security Tool Developer | Ethical Hacker</p>
+                        <p>Cyber Security Student | Security Researcher</p>
                         <br>
                         <p><span>akansh@root:~$</span> cat skills.txt</p>
-                        <p>Python | Kali Linux | Burp Suite | Web Security | Vulnerability Research</p>
+                        <p>Python | Kali Linux | Burp Suite | Web Security</p>
                         <br>
-                        <p><span>akansh@root:~$</span> ./launch_portfolio</p>
-                        <p>Portfolio initialized at: <a href="#" style="color: var(--secondary);">akanshpandey.tech</a></p>
+                        <p><span>akansh@root:~$</span> cat location.txt</p>
+                        <p>Based in India</p>
                     </div>
                 </div>
             </div>
@@ -699,7 +785,6 @@
                                 <li>Web Vulnerability Scanner</li>
                                 <li>Password Strength Analyzer</li>
                                 <li>Network Port Scanner</li>
-                                <li>Security Dashboard with Analytics</li>
                             </ul>
                         </div>
                         
@@ -708,19 +793,20 @@
                             <span class="tech-item">JavaScript</span>
                             <span class="tech-item">Supabase</span>
                             <span class="tech-item">HTML/CSS</span>
-                            <span class="tech-item">Render</span>
                         </div>
                         
-                        <a href="https://github.com/akansh024" target="_blank" class="btn">
-                            <i class="fab fa-github"></i> VIEW ON GITHUB
-                        </a>
+                        <div style="text-align: center; margin-top: 20px;">
+                            <a href="https://github.com/akansh024" target="_blank" class="btn">
+                                <i class="fab fa-github"></i> VIEW ON GITHUB
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="project-card">
                     <div class="project-header">
                         <h3 class="project-title">SECURITY RESEARCH</h3>
-                        <span class="project-status">PRIVATE</span>
+                        <span class="project-status">CONFIDENTIAL</span>
                     </div>
                     <div class="project-body">
                         <p class="project-description">Responsible security research and vulnerability discovery for various platforms.</p>
@@ -730,7 +816,6 @@
                                 <li>Web application security testing</li>
                                 <li>Vulnerability assessment</li>
                                 <li>Responsible disclosure</li>
-                                <li>Security best practices implementation</li>
                                 <li>Bug bounty program participation</li>
                             </ul>
                         </div>
@@ -739,12 +824,14 @@
                             <span class="tech-item">Burp Suite</span>
                             <span class="tech-item">OWASP Top 10</span>
                             <span class="tech-item">Kali Linux</span>
-                            <span class="tech-item">Web Security</span>
                         </div>
                         
-                        <p style="color: var(--gray); margin-top: 20px; font-style: italic;">
-                            Due to the sensitive nature of security research, detailed information is kept private to protect systems and users.
-                        </p>
+                        <div style="margin-top: 20px; padding: 15px; background: rgba(255, 42, 109, 0.1); border-radius: 8px;">
+                            <p style="color: var(--gray); font-style: italic;">
+                                <i class="fas fa-lock" style="color: var(--accent); margin-right: 8px;"></i>
+                                Due to the sensitive nature of security research, detailed information is kept private to protect systems and users.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -771,18 +858,13 @@
                 </div>
                 
                 <p class="event-description">
-                    Attended the exclusive MediaTek Dimensity event focused on cutting-edge mobile technology and chipset innovation. Gained insights into the future of mobile computing, AI integration in chipsets, and security considerations for next-generation mobile devices.
-                </p>
-                
-                <p class="event-description">
-                    The event featured technical deep dives into MediaTek's latest Dimensity processors, discussions on 5G advancements, and security architectures for mobile platforms. Networked with industry professionals and explored career opportunities in mobile security.
+                    Attended the exclusive MediaTek Dimensity event focused on cutting-edge mobile technology and chipset innovation. Explored security architectures for next-generation mobile devices.
                 </p>
                 
                 <div class="tech-stack">
                     <span class="tech-item">Mobile Security</span>
                     <span class="tech-item">Chipset Technology</span>
                     <span class="tech-item">5G Networks</span>
-                    <span class="tech-item">AI Integration</span>
                 </div>
             </div>
         </div>
@@ -867,20 +949,18 @@
                             <div class="terminal-dot"></div>
                         </div>
                         <div class="terminal-content">
-                            <p><span>akansh@root:~$</span> ./contact_form</p>
-                            <p>Form initialized...</p>
+                            <p><span>akansh@root:~$</span> cat contact_info.txt</p>
+                            <p>For collaboration or security inquiries:</p>
                             <br>
-                            <p>Name: _______________</p>
-                            <p>Email: ______________</p>
-                            <p>Subject: _____________</p>
-                            <p>Message: _____________</p>
-                            <p>[SUBMIT]</p>
-                            <br>
-                            <p>For immediate response, please use direct contact methods.</p>
+                            <p>Email: pandayakansh09@gmail.com</p>
+                            <p>Phone: +91 9667780770</p>
                             <br>
                             <p><span>akansh@root:~$</span> ping social_media</p>
                             <p>LinkedIn: <a href="https://www.linkedin.com/in/akansh-pandey-81861b237/" target="_blank" style="color: var(--secondary);">linkedin.com/in/akansh-pandey</a></p>
                             <p>Instagram: <a href="https://www.instagram.com/_whois_akansh/" target="_blank" style="color: var(--secondary);">instagram.com/_whois_akansh</a></p>
+                            <br>
+                            <p><span>akansh@root:~$</span> ./connect.sh</p>
+                            <p>Ready to discuss cybersecurity opportunities...</p>
                         </div>
                     </div>
                 </div>
@@ -909,8 +989,46 @@
             <p class="copyright terminal-font">Last updated: June 2024</p>
         </div>
     </footer>
+    
+    <!-- Scroll to top button -->
+    <div class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
 
     <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Scroll to top button
+        const scrollTopBtn = document.querySelector('.scroll-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
         // Terminal typing effect
         document.addEventListener('DOMContentLoaded', function() {
             const terminalLines = document.querySelectorAll('.terminal-content p');
