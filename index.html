@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akansh Pandey | Cybersecurity Specialist</title>
+    <title>CLASSIFIED // PANDEX, A. // CYBERSECURITY OPERATIONS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #00ff9d;
-            --secondary: #00c8ff;
-            --accent: #ff2a6d;
-            --dark: #0d1117;
-            --darker: #06090f;
-            --light: #f0f6fc;
-            --gray: #8b949e;
+            --tactical-green: #1E2D27;
+            --dark-bg: #0A0F0D;
+            --darker-bg: #050807;
+            --amber: #E8743B;
+            --amber-dark: #C45E2A;
+            --terminal-text: #C8D0D0;
+            --terminal-green: #00CC66;
+            --annotation-bg: #2A332F;
+            --border-color: #4A5A51;
         }
         
         * {
@@ -24,15 +26,30 @@
         }
         
         body {
-            font-family: 'Montserrat', sans-serif;
-            background: var(--darker);
-            color: var(--light);
+            font-family: 'Share Tech Mono', monospace;
+            background-color: var(--dark-bg);
+            color: var(--terminal-text);
             line-height: 1.6;
             overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(30, 45, 39, 0.3) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(30, 45, 39, 0.3) 0%, transparent 20%);
+            position: relative;
         }
         
-        .terminal-font {
-            font-family: 'JetBrains Mono', monospace;
+        body::before {
+            content: "TOP SECRET // NOFORN";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 5rem;
+            color: rgba(30, 45, 39, 0.15);
+            z-index: -1;
+            font-weight: bold;
+            letter-spacing: 0.5rem;
+            white-space: nowrap;
+            pointer-events: none;
         }
         
         .container {
@@ -43,13 +60,13 @@
         
         /* Header */
         header {
-            background: rgba(13, 17, 23, 0.95);
+            background-color: rgba(10, 15, 13, 0.95);
             position: fixed;
             width: 100%;
             z-index: 1000;
-            border-bottom: 1px solid rgba(0, 255, 157, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 15px 0;
+            border-bottom: 1px dashed var(--border-color);
+            padding: 10px 0;
+            backdrop-filter: blur(5px);
         }
         
         nav {
@@ -59,28 +76,31 @@
         }
         
         .logo {
-            font-size: 1.8rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
             font-weight: 700;
-            color: var(--primary);
+            color: var(--terminal-green);
             text-decoration: none;
+            letter-spacing: 1px;
         }
         
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 25px;
         }
         
         .nav-links a {
-            color: var(--light);
+            color: var(--terminal-text);
             text-decoration: none;
-            font-weight: 500;
-            font-size: 1rem;
+            font-size: 0.9rem;
             position: relative;
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .nav-links a:hover {
-            color: var(--primary);
+            color: var(--amber);
         }
         
         .nav-links a::after {
@@ -89,8 +109,8 @@
             bottom: -5px;
             left: 0;
             width: 0;
-            height: 2px;
-            background: var(--primary);
+            height: 1px;
+            background: var(--amber);
             transition: width 0.3s ease;
         }
         
@@ -100,144 +120,112 @@
         
         /* Hero Section */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
             padding-top: 80px;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 70% 30%, rgba(0, 200, 255, 0.1) 0%, rgba(6, 9, 15, 0) 70%);
-            z-index: -1;
+            border-bottom: 1px dashed var(--border-color);
         }
         
         .hero-content {
-            max-width: 700px;
+            max-width: 800px;
+        }
+        
+        .clearance-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: var(--amber);
+            color: var(--dark-bg);
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
         }
         
         .hero h1 {
-            font-size: 3.5rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.8rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             line-height: 1.1;
+            color: var(--terminal-text);
+            text-transform: uppercase;
         }
         
         .hero h1 span {
-            color: var(--primary);
+            color: var(--terminal-green);
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 30px;
-            color: var(--gray);
+            color: var(--terminal-text);
+            max-width: 600px;
         }
         
-        .terminal {
-            background: rgba(13, 17, 23, 0.7);
-            border: 1px solid rgba(0, 255, 157, 0.2);
-            border-radius: 8px;
+        .dossier-container {
+            background: rgba(10, 15, 13, 0.7);
+            border: 1px dashed var(--border-color);
+            border-radius: 0;
             padding: 25px;
             margin-top: 30px;
-            font-family: 'JetBrains Mono', monospace;
-            max-width: 700px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             position: relative;
-            height: 250px; /* Fixed height */
+            max-width: 700px;
         }
         
-        /* Terminal scroll indicator */
-        .terminal::after {
-            content: 'Scroll ↓';
+        .dossier-container::before {
+            content: "OPERATIVE DOSSIER";
             position: absolute;
-            bottom: 10px;
-            right: 20px;
-            color: var(--gray);
+            top: -10px;
+            left: 20px;
+            background: var(--dark-bg);
+            padding: 0 10px;
             font-size: 0.8rem;
-            opacity: 0.6;
-            animation: pulse 2s infinite;
+            color: var(--amber);
         }
         
-        @keyframes pulse {
-            0% { opacity: 0.4; }
-            50% { opacity: 0.8; }
-            100% { opacity: 0.4; }
-        }
-        
-        .terminal-header {
+        .dossier-header {
             display: flex;
             gap: 10px;
             margin-bottom: 20px;
         }
         
-        .terminal-dot {
-            width: 12px;
-            height: 12px;
+        .dossier-dot {
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
+            background: var(--amber);
         }
         
-        .terminal-dot:nth-child(1) {
-            background: var(--accent);
+        .dossier-dot:nth-child(2) {
+            background: var(--terminal-green);
         }
         
-        .terminal-dot:nth-child(2) {
-            background: var(--secondary);
+        .dossier-dot:nth-child(3) {
+            background: var(--border-color);
         }
         
-        .terminal-dot:nth-child(3) {
-            background: var(--primary);
-        }
-        
-        .terminal-content {
-            color: var(--primary);
+        .dossier-content {
+            color: var(--terminal-text);
             line-height: 1.8;
-            font-size: 1rem;
-            height: 100%; /* Full height of terminal */
-            overflow-y: auto; /* Make content scrollable */
-            padding-right: 10px;
+            font-size: 0.95rem;
         }
         
-        /* Hide scrollbar for Chrome, Safari and Opera */
-        .terminal-content::-webkit-scrollbar {
-            width: 5px;
-        }
-        
-        .terminal-content::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        
-        .terminal-content::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 10px;
-        }
-        
-        /* Hide scrollbar for IE, Edge and Firefox */
-        .terminal-content {
-            scrollbar-width: thin; /* Firefox */
-            scrollbar-color: var(--primary) transparent; /* Firefox */
-        }
-        
-        .terminal-content span {
-            color: var(--secondary);
+        .dossier-content span {
+            color: var(--terminal-green);
         }
         
         .btn {
             display: inline-block;
-            padding: 12px 30px;
+            padding: 10px 25px;
             background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            border-radius: 30px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
+            color: var(--amber);
+            border: 1px solid var(--amber);
+            font-family: 'Share Tech Mono', monospace;
+            font-weight: 500;
+            font-size: 0.9rem;
             text-decoration: none;
             margin-right: 15px;
             margin-top: 20px;
@@ -245,59 +233,61 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .btn:hover {
-            background: var(--primary);
-            color: var(--darker);
-            box-shadow: 0 0 20px rgba(0, 255, 157, 0.4);
+            background: var(--amber);
+            color: var(--dark-bg);
         }
         
         .btn-secondary {
-            border-color: var(--secondary);
-            color: var(--secondary);
+            border-color: var(--terminal-green);
+            color: var(--terminal-green);
         }
         
         .btn-secondary:hover {
-            background: var(--secondary);
-            color: var(--darker);
-            box-shadow: 0 0 20px rgba(0, 200, 255, 0.4);
+            background: var(--terminal-green);
+            color: var(--dark-bg);
         }
         
         /* Sections */
         .section {
             padding: 80px 0;
+            border-bottom: 1px dashed var(--border-color);
         }
         
         .section-header {
-            text-align: center;
             margin-bottom: 50px;
+            position: relative;
         }
         
         .section-title {
-            font-size: 2.5rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
             margin-bottom: 15px;
             position: relative;
             display: inline-block;
+            color: var(--terminal-text);
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         
         .section-title::after {
             content: '';
             position: absolute;
             bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: var(--primary);
-            border-radius: 2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--amber);
         }
         
         .section-subtitle {
-            color: var(--gray);
-            font-size: 1.2rem;
+            color: var(--terminal-text);
+            font-size: 1rem;
             max-width: 700px;
-            margin: 0 auto;
         }
         
         /* Skills */
@@ -308,34 +298,44 @@
         }
         
         .skill-card {
-            background: rgba(13, 17, 23, 0.7);
-            border: 1px solid rgba(0, 255, 157, 0.1);
-            padding: 30px;
-            border-radius: 10px;
+            background: rgba(10, 15, 13, 0.7);
+            border: 1px dashed var(--border-color);
+            padding: 25px;
             transition: all 0.3s ease;
-            text-align: center;
+            position: relative;
+        }
+        
+        .skill-card::before {
+            content: "CAPABILITY";
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: var(--dark-bg);
+            padding: 0 8px;
+            font-size: 0.7rem;
+            color: var(--amber);
         }
         
         .skill-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--primary);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            border-color: var(--amber);
         }
         
         .skill-icon {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 20px;
+            font-size: 2rem;
+            color: var(--terminal-green);
+            margin-bottom: 15px;
         }
         
         .skill-title {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 15px;
             font-weight: 600;
+            color: var(--terminal-text);
         }
         
         .skill-description {
-            color: var(--gray);
+            color: var(--terminal-text);
+            font-size: 0.9rem;
         }
         
         /* Projects */
@@ -346,149 +346,168 @@
         }
         
         .project-card {
-            background: rgba(13, 17, 23, 0.7);
-            border: 1px solid rgba(0, 200, 255, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: all 0.3s ease;
+            background: rgba(10, 15, 13, 0.7);
+            border: 1px dashed var(--border-color);
+            position: relative;
+        }
+        
+        .project-card::before {
+            content: "MISSION BRIEF";
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: var(--dark-bg);
+            padding: 0 8px;
+            font-size: 0.7rem;
+            color: var(--amber);
         }
         
         .project-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--secondary);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            border-color: var(--terminal-green);
         }
         
         .project-header {
-            padding: 25px;
-            border-bottom: 1px solid rgba(0, 200, 255, 0.1);
+            padding: 20px;
+            border-bottom: 1px dashed var(--border-color);
             background: rgba(0, 0, 0, 0.2);
         }
         
         .project-title {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             margin-bottom: 10px;
-            color: var(--secondary);
+            color: var(--terminal-green);
             font-weight: 600;
         }
         
         .project-status {
             display: inline-block;
-            padding: 5px 15px;
-            background: rgba(0, 255, 157, 0.1);
-            color: var(--primary);
-            font-size: 0.9rem;
-            border-radius: 30px;
+            padding: 4px 12px;
+            background: rgba(232, 116, 59, 0.2);
+            color: var(--amber);
+            font-size: 0.8rem;
+            border-radius: 0;
             font-weight: 500;
+            border: 1px solid var(--amber);
         }
         
         .project-body {
-            padding: 25px;
+            padding: 20px;
         }
         
         .project-description {
             margin-bottom: 20px;
-            color: var(--gray);
+            color: var(--terminal-text);
+            font-size: 0.9rem;
         }
         
         .project-features {
-            margin: 25px 0;
+            margin: 20px 0;
         }
         
         .project-features li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
+            font-size: 0.9rem;
         }
         
         .project-features li::before {
-            content: '▹';
-            color: var(--primary);
+            content: '▶';
+            color: var(--amber);
             margin-right: 10px;
-            font-size: 1.2rem;
+            font-size: 0.8rem;
         }
         
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin: 25px 0;
+            gap: 8px;
+            margin: 20px 0;
         }
         
         .tech-item {
-            padding: 6px 15px;
-            background: rgba(0, 200, 255, 0.1);
-            color: var(--secondary);
-            font-size: 0.9rem;
-            border-radius: 30px;
-            font-weight: 500;
+            padding: 4px 12px;
+            background: rgba(0, 204, 102, 0.1);
+            color: var(--terminal-green);
+            font-size: 0.8rem;
+            border: 1px solid var(--terminal-green);
         }
         
-        /* Event Card */
+        /* Events */
         .events-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
         }
         
         .event-card {
-            background: rgba(13, 17, 23, 0.7);
-            border: 1px solid rgba(255, 42, 109, 0.1);
-            border-radius: 10px;
-            padding: 30px;
+            background: rgba(10, 15, 13, 0.7);
+            border: 1px dashed var(--border-color);
+            padding: 25px;
             transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .event-card::before {
+            content: "FIELD OPERATION";
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: var(--dark-bg);
+            padding: 0 8px;
+            font-size: 0.7rem;
+            color: var(--amber);
         }
         
         .event-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            border-color: var(--amber);
         }
         
         .event-header {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .event-icon {
-            font-size: 2rem;
-            color: var(--accent);
+            font-size: 1.5rem;
+            color: var(--amber);
             margin-right: 15px;
         }
         
         .event-title {
-            font-size: 1.6rem;
-            color: var(--light);
+            font-size: 1.3rem;
+            color: var(--terminal-text);
         }
         
         .event-date {
             display: inline-block;
-            padding: 5px 15px;
-            background: rgba(255, 42, 109, 0.1);
-            color: var(--accent);
-            border-radius: 30px;
-            font-size: 0.9rem;
+            padding: 4px 12px;
+            background: rgba(232, 116, 59, 0.2);
+            color: var(--amber);
+            border-radius: 0;
+            font-size: 0.8rem;
             font-weight: 500;
-            margin-top: 10px;
+            margin-top: 8px;
+            border: 1px solid var(--amber);
         }
         
         .event-description {
-            color: var(--gray);
-            line-height: 1.7;
-            margin-bottom: 20px;
+            color: var(--terminal-text);
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
         }
         
         /* YouTube Section */
         .youtube-section {
-            background: rgba(6, 9, 15, 0.7);
             padding: 80px 0;
+            border-bottom: 1px dashed var(--border-color);
         }
         
         .youtube-container {
             max-width: 900px;
             margin: 0 auto;
-            text-align: center;
         }
         
         .video-wrapper {
@@ -496,10 +515,8 @@
             width: 100%;
             padding-bottom: 56.25%; /* 16:9 aspect ratio */
             margin-top: 30px;
-            border-radius: 12px;
+            border: 1px dashed var(--border-color);
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 42, 109, 0.2);
         }
         
         .video-wrapper iframe {
@@ -523,98 +540,108 @@
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 40px;
         }
         
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 20px;
         }
         
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 20px;
-            padding: 20px;
-            background: rgba(13, 17, 23, 0.7);
-            border-radius: 10px;
+            gap: 15px;
+            padding: 15px;
+            background: rgba(10, 15, 13, 0.7);
+            border: 1px dashed var(--border-color);
             transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .contact-item::before {
+            content: "COMMS CHANNEL";
+            position: absolute;
+            top: -8px;
+            left: 15px;
+            background: var(--dark-bg);
+            padding: 0 8px;
+            font-size: 0.7rem;
+            color: var(--amber);
         }
         
         .contact-item:hover {
-            transform: translateY(-5px);
-            background: rgba(13, 17, 23, 0.9);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: var(--terminal-green);
         }
         
         .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(0, 255, 157, 0.1);
-            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 204, 102, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            color: var(--primary);
+            font-size: 1.3rem;
+            color: var(--terminal-green);
+            border: 1px solid var(--terminal-green);
         }
         
         .contact-text h4 {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             margin-bottom: 5px;
             font-weight: 600;
+            color: var(--terminal-text);
         }
         
         .contact-text a, .contact-text p {
-            color: var(--light);
+            color: var(--terminal-text);
             text-decoration: none;
             transition: all 0.3s ease;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
         }
         
         .contact-text a:hover {
-            color: var(--primary);
+            color: var(--amber);
         }
         
         .social-links {
             display: flex;
-            gap: 15px;
-            margin-top: 10px;
+            gap: 10px;
+            margin-top: 8px;
         }
         
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: rgba(0, 200, 255, 0.1);
-            color: var(--secondary);
-            font-size: 1.2rem;
+            width: 35px;
+            height: 35px;
+            background: rgba(0, 204, 102, 0.1);
+            color: var(--terminal-green);
+            font-size: 1rem;
             transition: all 0.3s ease;
             text-decoration: none;
+            border: 1px solid var(--terminal-green);
         }
         
         .social-links a:hover {
-            background: var(--secondary);
-            color: var(--darker);
-            transform: translateY(-5px);
+            background: var(--terminal-green);
+            color: var(--dark-bg);
         }
         
         /* Footer */
         footer {
-            background: rgba(6, 9, 15, 0.95);
-            border-top: 1px solid rgba(0, 255, 157, 0.2);
-            padding: 40px 0;
+            background: rgba(5, 8, 7, 0.95);
+            border-top: 1px dashed var(--border-color);
+            padding: 30px 0;
             text-align: center;
         }
         
         .footer-social {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             margin-bottom: 20px;
         }
         
@@ -622,32 +649,50 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(0, 255, 157, 0.1);
-            color: var(--primary);
-            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 204, 102, 0.1);
+            color: var(--terminal-green);
+            font-size: 1.2rem;
             transition: all 0.3s ease;
             text-decoration: none;
+            border: 1px solid var(--terminal-green);
         }
         
         .footer-social a:hover {
-            background: var(--primary);
-            color: var(--darker);
-            transform: translateY(-5px);
+            background: var(--terminal-green);
+            color: var(--dark-bg);
         }
         
         .copyright {
-            color: var(--gray);
-            font-size: 1rem;
-            margin-top: 20px;
+            color: var(--terminal-text);
+            font-size: 0.9rem;
+            margin-top: 15px;
+        }
+        
+        /* Status Indicators */
+        .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .status-active {
+            background: var(--terminal-green);
+            box-shadow: 0 0 5px var(--terminal-green);
+        }
+        
+        .status-standby {
+            background: var(--amber);
+            box-shadow: 0 0 5px var(--amber);
         }
         
         /* Responsive */
         @media (max-width: 992px) {
             .hero h1 {
-                font-size: 3rem;
+                font-size: 2.2rem;
             }
             
             .contact-grid {
@@ -655,7 +700,7 @@
             }
             
             .section-title {
-                font-size: 2.2rem;
+                font-size: 1.7rem;
             }
         }
         
@@ -665,11 +710,11 @@
             }
             
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
             }
             
             .section-title {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
             
             .projects-grid, .events-grid {
@@ -680,12 +725,8 @@
                 font-size: 1rem;
             }
             
-            .terminal-content {
+            .dossier-content {
                 font-size: 0.9rem;
-            }
-            
-            .terminal {
-                height: 220px; /* Slightly smaller on mobile */
             }
         }
         
@@ -694,8 +735,8 @@
             display: none;
             background: transparent;
             border: none;
-            color: var(--light);
-            font-size: 1.5rem;
+            color: var(--terminal-text);
+            font-size: 1.3rem;
             cursor: pointer;
         }
         
@@ -706,15 +747,16 @@
             
             .nav-links {
                 position: fixed;
-                top: 70px;
+                top: 60px;
                 right: -100%;
                 flex-direction: column;
-                background: rgba(13, 17, 23, 0.95);
+                background: rgba(10, 15, 13, 0.95);
                 width: 100%;
                 padding: 20px;
                 transition: right 0.3s ease;
                 z-index: 999;
-                border-top: 1px solid rgba(0, 255, 157, 0.2);
+                border-top: 1px dashed var(--border-color);
+                border-bottom: 1px dashed var(--border-color);
             }
             
             .nav-links.active {
@@ -722,26 +764,25 @@
             }
             
             .nav-links a {
-                padding: 15px 0;
-                font-size: 1.2rem;
+                padding: 12px 0;
+                font-size: 1rem;
             }
         }
         
         /* Scroll to top button */
         .scroll-top {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: rgba(0, 255, 157, 0.1);
-            border: 1px solid var(--primary);
-            border-radius: 50%;
-            color: var(--primary);
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(232, 116, 59, 0.1);
+            border: 1px solid var(--amber);
+            color: var(--amber);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             cursor: pointer;
             transition: all 0.3s ease;
             z-index: 100;
@@ -755,9 +796,32 @@
         }
         
         .scroll-top:hover {
-            background: var(--primary);
-            color: var(--darker);
-            box-shadow: 0 0 15px var(--primary);
+            background: var(--amber);
+            color: var(--dark-bg);
+        }
+        
+        /* Annotation boxes */
+        .annotation {
+            background: var(--annotation-bg);
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid var(--amber);
+            font-size: 0.9rem;
+        }
+        
+        /* Terminal typing effect */
+        .typing-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 1.2em;
+            background-color: var(--terminal-green);
+            margin-left: 2px;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
         }
     </style>
 </head>
@@ -766,13 +830,13 @@
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo terminal-font">AKANSH<span style="color: var(--secondary);">_</span>PANDEY</a>
+                <a href="#" class="logo">// PANDEX, A. // CYBERSEC_OPS</a>
                 <div class="nav-links">
-                    <a href="#skills">Skills</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#events">Events</a>
-                    <a href="#youtube">YouTube</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#skills">CAPABILITIES</a>
+                    <a href="#projects">OPERATIONS</a>
+                    <a href="#events">FIELD_REPORTS</a>
+                    <a href="#youtube">INTEL_BRIEFINGS</a>
+                    <a href="#contact">COMMS</a>
                 </div>
                 <button class="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
@@ -785,29 +849,31 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Cybersecurity Specialist & <span>Ethical Hacker</span></h1>
-                <p>Second-year Cybersecurity student passionate about penetration testing, secure development, and ethical hacking. Currently pursuing BSc(Hons) Cyber Security at K.R Mangalam University.</p>
-                <a href="#projects" class="btn">VIEW PROJECTS</a>
-                <a href="#contact" class="btn btn-secondary">CONTACT ME</a>
+                <div class="clearance-badge">CLEARANCE LEVEL: TOP SECRET</div>
+                <h1>CYBERSECURITY OPERATIVE <span>// PANDEX, A.</span></h1>
+                <p>Second-year Cybersecurity specialist with expertise in penetration testing, secure development, and ethical hacking. Currently pursuing BSc(Hons) Cyber Security at K.R Mangalam University.</p>
+                <a href="#projects" class="btn">VIEW OPERATIONS</a>
+                <a href="#contact" class="btn btn-secondary">ESTABLISH COMMS</a>
                 
-                <div class="terminal">
-                    <div class="terminal-header">
-                        <div class="terminal-dot"></div>
-                        <div class="terminal-dot"></div>
-                        <div class="terminal-dot"></div>
+                <div class="dossier-container">
+                    <div class="dossier-header">
+                        <div class="dossier-dot"></div>
+                        <div class="dossier-dot"></div>
+                        <div class="dossier-dot"></div>
                     </div>
-                    <div class="terminal-content">
-                        <p><span>akansh@root:~$</span> whoami</p>
-                        <p>Cyber Security Student | Security Researcher</p>
+                    <div class="dossier-content">
+                        <p><span>OPERATIVE@SECURE_TERMINAL:~$</span> whoami</p>
+                        <p>Cyber Security Specialist | Security Researcher | Blockchain Developer</p>
                         <br>
-                        <p><span>akansh@root:~$</span> cat skills.txt</p>
-                        <p>Python | Kali Linux | Burp Suite | Web Security | Blockchain</p>
+                        <p><span>OPERATIVE@SECURE_TERMINAL:~$</span> cat capabilities.txt</p>
+                        <p>Penetration Testing | Vulnerability Research | Secure Development | Blockchain Security</p>
                         <br>
-                        <p><span>akansh@root:~$</span> cat location.txt</p>
-                        <p>Based in India</p>
+                        <p><span>OPERATIVE@SECURE_TERMINAL:~$</span> cat location.txt</p>
+                        <p>OPERATING FROM SECURE LOCATION IN INDIA</p>
                         <br>
-                        <p><span>akansh@root:~$</span> ./connect.sh</p>
-                        <p>Ready to discuss cybersecurity opportunities...</p>
+                        <p><span>OPERATIVE@SECURE_TERMINAL:~$</span> ./establish_comms.sh</p>
+                        <p>READY FOR MISSION BRIEFING...</p>
+                        <span class="typing-cursor"></span>
                     </div>
                 </div>
             </div>
@@ -818,8 +884,8 @@
     <section id="skills" class="section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">TECHNICAL SKILLS</h2>
-                <p class="section-subtitle">My cybersecurity expertise and technical capabilities</p>
+                <h2 class="section-title">OPERATIVE CAPABILITIES</h2>
+                <p class="section-subtitle">Specialized skills and expertise for cybersecurity operations</p>
             </div>
             
             <div class="skills-grid">
@@ -827,50 +893,62 @@
                     <div class="skill-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3 class="skill-title">Penetration Testing</h3>
+                    <h3 class="skill-title">PENETRATION TESTING</h3>
                     <p class="skill-description">Proficient in identifying and exploiting vulnerabilities using Kali Linux, Burp Suite, and other security tools.</p>
+                    <div class="annotation">
+                        <span class="status-indicator status-active"></span> ACTIVE & READY FOR DEPLOYMENT
+                    </div>
                 </div>
                 
                 <div class="skill-card">
                     <div class="skill-icon">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3 class="skill-title">Development</h3>
+                    <h3 class="skill-title">SECURE DEVELOPMENT</h3>
                     <p class="skill-description">Skilled in Python, HTML, CSS, JavaScript for building secure applications and security tools.</p>
+                    <div class="annotation">
+                        <span class="status-indicator status-active"></span> ACTIVE & READY FOR DEPLOYMENT
+                    </div>
                 </div>
                 
                 <div class="skill-card">
                     <div class="skill-icon">
                         <i class="fas fa-bug"></i>
                     </div>
-                    <h3 class="skill-title">Vulnerability Research</h3>
+                    <h3 class="skill-title">VULNERABILITY RESEARCH</h3>
                     <p class="skill-description">Experience in discovering and responsibly disclosing vulnerabilities in web applications.</p>
+                    <div class="annotation">
+                        <span class="status-indicator status-active"></span> ACTIVE & READY FOR DEPLOYMENT
+                    </div>
                 </div>
                 
                 <div class="skill-card">
                     <div class="skill-icon">
                         <i class="fab fa-ethereum"></i>
                     </div>
-                    <h3 class="skill-title">Blockchain Security</h3>
+                    <h3 class="skill-title">BLOCKCHAIN SECURITY</h3>
                     <p class="skill-description">Knowledge of blockchain technology, smart contract security, and decentralized applications.</p>
+                    <div class="annotation">
+                        <span class="status-indicator status-standby"></span> SPECIALIZED TRAINING IN PROGRESS
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section" style="background: rgba(6, 9, 15, 0.7);">
+    <section id="projects" class="section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">SECURITY PROJECTS</h2>
-                <p class="section-subtitle">My cybersecurity tools and development work</p>
+                <h2 class="section-title">ACTIVE OPERATIONS</h2>
+                <p class="section-subtitle">Current and completed cybersecurity missions</p>
             </div>
             
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-header">
-                        <h3 class="project-title">Blockchain Blue Carbon Registry</h3>
-                        <span class="project-status">COMPLETED</span>
+                        <h3 class="project-title">BLOCKCHAIN BLUE CARBON REGISTRY</h3>
+                        <span class="project-status">MISSION COMPLETE</span>
                     </div>
                     <div class="project-body">
                         <p class="project-description">A blockchain-based system for tracking and verifying blue carbon credits to support marine ecosystem conservation.</p>
@@ -893,7 +971,7 @@
                         
                         <div style="text-align: center; margin-top: 20px;">
                             <a href="https://github.com/akansh024/Blockchain-Based-Blue-Carbon-Registry-and-MRV-System" target="_blank" class="btn">
-                                <i class="fab fa-github"></i> VIEW ON GITHUB
+                                <i class="fab fa-github"></i> ACCESS INTELLIGENCE
                             </a>
                         </div>
                     </div>
@@ -901,8 +979,8 @@
                 
                 <div class="project-card">
                     <div class="project-header">
-                        <h3 class="project-title">SENTINEL-X</h3>
-                        <span class="project-status">ONGOING</span>
+                        <h3 class="project-title">OPERATION: SENTINEL-X</h3>
+                        <span class="project-status">ACTIVE MISSION</span>
                     </div>
                     <div class="project-body">
                         <p class="project-description">Comprehensive cybersecurity toolkit designed to provide multiple security utilities in one platform.</p>
@@ -925,7 +1003,7 @@
                         
                         <div style="text-align: center; margin-top: 20px;">
                             <a href="https://github.com/akansh024" target="_blank" class="btn">
-                                <i class="fab fa-github"></i> VIEW ON GITHUB
+                                <i class="fab fa-github"></i> ACCESS INTELLIGENCE
                             </a>
                         </div>
                     </div>
@@ -933,8 +1011,8 @@
                 
                 <div class="project-card">
                     <div class="project-header">
-                        <h3 class="project-title">SECURITY RESEARCH</h3>
-                        <span class="project-status">CONFIDENTIAL</span>
+                        <h3 class="project-title">OPERATION: VULNERABILITY RESEARCH</h3>
+                        <span class="project-status">CLASSIFIED</span>
                     </div>
                     <div class="project-body">
                         <p class="project-description">Responsible security research and vulnerability discovery for various platforms.</p>
@@ -954,11 +1032,8 @@
                             <span class="tech-item">Kali Linux</span>
                         </div>
                         
-                        <div style="margin-top: 20px; padding: 15px; background: rgba(255, 42, 109, 0.1); border-radius: 8px;">
-                            <p style="color: var(--gray); font-style: italic;">
-                                <i class="fas fa-lock" style="color: var(--accent); margin-right: 8px;"></i>
-                                Due to the sensitive nature of security research, detailed information is kept private to protect systems and users.
-                            </p>
+                        <div class="annotation">
+                            <span class="status-indicator status-standby"></span> CLASSIFIED: DETAILS RESTRICTED TO AUTHORIZED PERSONNEL
                         </div>
                     </div>
                 </div>
@@ -970,8 +1045,8 @@
     <section id="events" class="section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">RECENT EVENTS</h2>
-                <p class="section-subtitle">Conferences, workshops, and industry engagements</p>
+                <h2 class="section-title">FIELD OPERATION REPORTS</h2>
+                <p class="section-subtitle">Recent engagements and intelligence gathering missions</p>
             </div>
             
             <div class="events-grid">
@@ -981,7 +1056,7 @@
                             <i class="fab fa-amazon"></i>
                         </div>
                         <div>
-                            <h3 class="event-title">Amazon Best In Tech Awards</h3>
+                            <h3 class="event-title">AMAZON BEST IN TECH AWARDS</h3>
                             <span class="event-date">2024</span>
                         </div>
                     </div>
@@ -1003,7 +1078,7 @@
                             <i class="fas fa-gamepad"></i>
                         </div>
                         <div>
-                            <h3 class="event-title">Game On With MSI</h3>
+                            <h3 class="event-title">GAME ON WITH MSI</h3>
                             <span class="event-date">2024</span>
                         </div>
                     </div>
@@ -1025,7 +1100,7 @@
                             <i class="fas fa-robot"></i>
                         </div>
                         <div>
-                            <h3 class="event-title">Game On with Nord 5</h3>
+                            <h3 class="event-title">GAME ON WITH NORD 5</h3>
                             <span class="event-date">2024</span>
                         </div>
                     </div>
@@ -1047,8 +1122,8 @@
                             <i class="fas fa-microchip"></i>
                         </div>
                         <div>
-                            <h3 class="event-title">MediaTek Dimensity Tech Event</h3>
-                            <span class="event-date">June 20, 2025</span>
+                            <h3 class="event-title">MEDIATEK DIMENSITY TECH EVENT</h3>
+                            <span class="event-date">JUNE 20, 2025</span>
                         </div>
                     </div>
                     
@@ -1070,8 +1145,8 @@
     <section id="youtube" class="youtube-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">LATEST CONTENT</h2>
-                <p class="section-subtitle">Check out my latest cybersecurity insights and tutorials</p>
+                <h2 class="section-title">INTELLIGENCE BRIEFINGS</h2>
+                <p class="section-subtitle">Latest cybersecurity insights and tactical tutorials</p>
             </div>
             
             <div class="youtube-container">
@@ -1080,11 +1155,11 @@
                 </div>
                 
                 <div class="youtube-cta">
-                    <a href="https://www.youtube.com/@Hackshastra/featured" target="_blank" class="btn" style="background: var(--accent); border-color: var(--accent);">
-                        <i class="fab fa-youtube"></i> SUBSCRIBE TO MY CHANNEL
+                    <a href="https://www.youtube.com/channel/UCUz7LcCjLzBc" target="_blank" class="btn" style="background: var(--amber); border-color: var(--amber); color: var(--dark-bg);">
+                        <i class="fab fa-youtube"></i> SUBSCRIBE FOR BRIEFINGS
                     </a>
                     <a href="#contact" class="btn btn-secondary">
-                        <i class="fas fa-comment"></i> SUGGEST A TOPIC
+                        <i class="fas fa-comment"></i> REQUEST TOPIC
                     </a>
                 </div>
             </div>
@@ -1092,11 +1167,11 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section" style="background: rgba(6, 9, 15, 0.7);">
+    <section id="contact" class="section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">GET IN TOUCH</h2>
-                <p class="section-subtitle">Let's discuss security projects, research, or opportunities</p>
+                <h2 class="section-title">ESTABLISH COMMUNICATIONS</h2>
+                <p class="section-subtitle">Secure channels for mission coordination and intelligence sharing</p>
             </div>
             
             <div class="contact-grid">
@@ -1106,7 +1181,7 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-text">
-                            <h4>Email</h4>
+                            <h4>ENCRYPTED MESSAGE</h4>
                             <a href="mailto:pandayakansh09@gmail.com">pandayakansh09@gmail.com</a>
                         </div>
                     </div>
@@ -1116,7 +1191,7 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <div class="contact-text">
-                            <h4>Phone</h4>
+                            <h4>SECURE VOICE CHANNEL</h4>
                             <a href="tel:+919667780770">+91 9667780770</a>
                         </div>
                     </div>
@@ -1126,7 +1201,7 @@
                             <i class="fab fa-github"></i>
                         </div>
                         <div class="contact-text">
-                            <h4>GitHub</h4>
+                            <h4>INTELLIGENCE REPOSITORY</h4>
                             <a href="https://github.com/akansh024" target="_blank">github.com/akansh024</a>
                         </div>
                     </div>
@@ -1136,7 +1211,7 @@
                             <i class="fab fa-linkedin-in"></i>
                         </div>
                         <div class="contact-text">
-                            <h4>LinkedIn</h4>
+                            <h4>ALLIED NETWORK</h4>
                             <a href="https://www.linkedin.com/in/akansh-pandey-81861b237/" target="_blank">linkedin.com/in/akansh-pandey</a>
                             <div class="social-links">
                                 <a href="https://www.linkedin.com/in/akansh-pandey-81861b237/" target="_blank">
@@ -1151,7 +1226,7 @@
                             <i class="fab fa-instagram"></i>
                         </div>
                         <div class="contact-text">
-                            <h4>Instagram</h4>
+                            <h4>COVERT CHANNEL</h4>
                             <a href="https://www.instagram.com/_whois_akansh/" target="_blank">@_whois_akansh</a>
                             <div class="social-links">
                                 <a href="https://www.instagram.com/_whois_akansh/" target="_blank">
@@ -1163,25 +1238,26 @@
                 </div>
                 
                 <div class="contact-info">
-                    <div class="terminal">
-                        <div class="terminal-header">
-                            <div class="terminal-dot"></div>
-                            <div class="terminal-dot"></div>
-                            <div class="terminal-dot"></div>
+                    <div class="dossier-container">
+                        <div class="dossier-header">
+                            <div class="dossier-dot"></div>
+                            <div class="dossier-dot"></div>
+                            <div class="dossier-dot"></div>
                         </div>
-                        <div class="terminal-content">
-                            <p><span>akansh@root:~$</span> cat contact_info.txt</p>
-                            <p>For collaboration or security inquiries:</p>
+                        <div class="dossier-content">
+                            <p><span>OPERATIVE@SECURE_TERMINAL:~$</span> cat contact_protocol.txt</p>
+                            <p>For mission coordination or intelligence sharing:</p>
                             <br>
-                            <p>Email: pandayakansh09@gmail.com</p>
-                            <p>Phone: +91 9667780770</p>
+                            <p>Encrypted Message: pandayakansh09@gmail.com</p>
+                            <p>Secure Voice Channel: +91 9667780770</p>
                             <br>
-                            <p><span>akansh@root:~$</span> ping social_media</p>
-                            <p>LinkedIn: <a href="https://www.linkedin.com/in/akansh-pandey-81861b237/" target="_blank" style="color: var(--secondary);">linkedin.com/in/akansh-pandey</a></p>
-                            <p>Instagram: <a href="https://www.instagram.com/_whois_akansh/" target="_blank" style="color: var(--secondary);">instagram.com/_whois_akansh</a></p>
+                            <p><span>OPERATIVE@SECURE_TERMINAL:~$</span> ping allied_networks</p>
+                            <p>Allied Network: <a href="https://www.linkedin.com/in/akansh-pandey-81861b237/" target="_blank" style="color: var(--terminal-green);">linkedin.com/in/akansh-pandey</a></p>
+                            <p>Covert Channel: <a href="https://www.instagram.com/_whois_akansh/" target="_blank" style="color: var(--terminal-green);">instagram.com/_whois_akansh</a></p>
                             <br>
-                            <p><span>akansh@root:~$</span> ./connect.sh</p>
-                            <p>Ready to discuss cybersecurity opportunities...</p>
+                            <p><span>OPERATIVE@SECURE_TERMINAL:~$</span> ./establish_comms.sh</p>
+                            <p>READY FOR MISSION BRIEFING...</p>
+                            <span class="typing-cursor"></span>
                         </div>
                     </div>
                 </div>
@@ -1209,8 +1285,8 @@
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
-            <p class="copyright">© 2024 Akansh Pandey. All rights reserved. Designed with security in mind.</p>
-            <p class="copyright terminal-font">Last updated: June 2024</p>
+            <p class="copyright">© 2024 OPERATIVE PANDEX, A. // ALL INTELLIGENCE CLASSIFIED</p>
+            <p class="copyright">LAST SYSTEM UPDATE: JUNE 2024</p>
         </div>
     </footer>
     
@@ -1255,7 +1331,7 @@
         
         // Terminal typing effect
         document.addEventListener('DOMContentLoaded', function() {
-            const terminalLines = document.querySelectorAll('.terminal-content p');
+            const terminalLines = document.querySelectorAll('.dossier-content p');
             
             terminalLines.forEach((line, index) => {
                 const text = line.textContent;
@@ -1273,13 +1349,15 @@
                     }, 20);
                 }, 300 * index);
             });
-            
-            // Auto-scroll to bottom of terminal after typing
-            setTimeout(() => {
-                const terminalContent = document.querySelector('.terminal-content');
-                terminalContent.scrollTop = terminalContent.scrollHeight;
-            }, 3000);
         });
+        
+        // Add blinking cursor after typing is complete
+        setTimeout(() => {
+            const typingCursors = document.querySelectorAll('.typing-cursor');
+            typingCursors.forEach(cursor => {
+                cursor.style.animation = 'blink 1s infinite';
+            });
+        }, 3000);
     </script>
 </body>
 </html>
