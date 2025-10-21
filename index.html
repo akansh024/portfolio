@@ -425,13 +425,18 @@
         }
         
         /* Event Card */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
         .event-card {
             background: rgba(13, 17, 23, 0.7);
             border: 1px solid rgba(255, 42, 109, 0.1);
             border-radius: 10px;
             padding: 30px;
             transition: all 0.3s ease;
-            margin-top: 40px;
         }
         
         .event-card:hover {
@@ -472,6 +477,46 @@
             color: var(--gray);
             line-height: 1.7;
             margin-bottom: 20px;
+        }
+        
+        /* YouTube Section */
+        .youtube-section {
+            background: rgba(6, 9, 15, 0.7);
+            padding: 80px 0;
+        }
+        
+        .youtube-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            margin-top: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 42, 109, 0.2);
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .youtube-cta {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
         
         /* Contact */
@@ -627,7 +672,7 @@
                 font-size: 2rem;
             }
             
-            .projects-grid {
+            .projects-grid, .events-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -726,6 +771,7 @@
                     <a href="#skills">Skills</a>
                     <a href="#projects">Projects</a>
                     <a href="#events">Events</a>
+                    <a href="#youtube">YouTube</a>
                     <a href="#contact">Contact</a>
                 </div>
                 <button class="mobile-menu-btn">
@@ -740,7 +786,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Cybersecurity Specialist & <span>Ethical Hacker</span></h1>
-                <p>First-year Cybersecurity student passionate about penetration testing, secure development, and ethical hacking. Currently pursuing BSc(Hons) Cyber Security at K.R Mangalam University.</p>
+                <p>Second-year Cybersecurity student passionate about penetration testing, secure development, and ethical hacking. Currently pursuing BSc(Hons) Cyber Security at K.R Mangalam University.</p>
                 <a href="#projects" class="btn">VIEW PROJECTS</a>
                 <a href="#contact" class="btn btn-secondary">CONTACT ME</a>
                 
@@ -755,7 +801,7 @@
                         <p>Cyber Security Student | Security Researcher</p>
                         <br>
                         <p><span>akansh@root:~$</span> cat skills.txt</p>
-                        <p>Python | Kali Linux | Burp Suite | Web Security</p>
+                        <p>Python | Kali Linux | Burp Suite | Web Security | Blockchain</p>
                         <br>
                         <p><span>akansh@root:~$</span> cat location.txt</p>
                         <p>Based in India</p>
@@ -803,10 +849,10 @@
                 
                 <div class="skill-card">
                     <div class="skill-icon">
-                        <i class="fas fa-network-wired"></i>
+                        <i class="fab fa-ethereum"></i>
                     </div>
-                    <h3 class="skill-title">Network Security</h3>
-                    <p class="skill-description">Knowledge of network protocols, firewall configurations, and intrusion detection systems.</p>
+                    <h3 class="skill-title">Blockchain Security</h3>
+                    <p class="skill-description">Knowledge of blockchain technology, smart contract security, and decentralized applications.</p>
                 </div>
             </div>
         </div>
@@ -821,6 +867,38 @@
             </div>
             
             <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Blockchain Blue Carbon Registry</h3>
+                        <span class="project-status">COMPLETED</span>
+                    </div>
+                    <div class="project-body">
+                        <p class="project-description">A blockchain-based system for tracking and verifying blue carbon credits to support marine ecosystem conservation.</p>
+                        
+                        <div class="project-features">
+                            <ul>
+                                <li>Transparent carbon credit tracking</li>
+                                <li>Immutable record keeping</li>
+                                <li>Automated MRV (Monitoring, Reporting, Verification)</li>
+                                <li>Smart contract implementation</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="tech-stack">
+                            <span class="tech-item">Blockchain</span>
+                            <span class="tech-item">Solidity</span>
+                            <span class="tech-item">Web3</span>
+                            <span class="tech-item">IPFS</span>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: 20px;">
+                            <a href="https://github.com/akansh024/Blockchain-Based-Blue-Carbon-Registry-and-MRV-System" target="_blank" class="btn">
+                                <i class="fab fa-github"></i> VIEW ON GITHUB
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="project-card">
                     <div class="project-header">
                         <h3 class="project-title">SENTINEL-X</h3>
@@ -896,25 +974,118 @@
                 <p class="section-subtitle">Conferences, workshops, and industry engagements</p>
             </div>
             
-            <div class="event-card">
-                <div class="event-header">
-                    <div class="event-icon">
-                        <i class="fas fa-microchip"></i>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-icon">
+                            <i class="fab fa-amazon"></i>
+                        </div>
+                        <div>
+                            <h3 class="event-title">Amazon Best In Tech Awards</h3>
+                            <span class="event-date">2024</span>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="event-title">MediaTek Dimensity Tech Event</h3>
-                        <span class="event-date">June 20, 2025</span>
+                    
+                    <p class="event-description">
+                        Participated in the prestigious Amazon Best In Tech Awards, showcasing innovative technology solutions and connecting with industry leaders.
+                    </p>
+                    
+                    <div class="tech-stack">
+                        <span class="tech-item">Innovation</span>
+                        <span class="tech-item">Technology</span>
+                        <span class="tech-item">Awards</span>
                     </div>
                 </div>
                 
-                <p class="event-description">
-                    Attended the exclusive MediaTek Dimensity event focused on cutting-edge mobile technology and chipset innovation. Explored security architectures for next-generation mobile devices.
-                </p>
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div>
+                            <h3 class="event-title">Game On With MSI</h3>
+                            <span class="event-date">2024</span>
+                        </div>
+                    </div>
+                    
+                    <p class="event-description">
+                        Engaged in the MSI gaming event, exploring the intersection of gaming technology and cybersecurity in modern gaming platforms.
+                    </p>
+                    
+                    <div class="tech-stack">
+                        <span class="tech-item">Gaming</span>
+                        <span class="tech-item">Hardware</span>
+                        <span class="tech-item">Technology</span>
+                    </div>
+                </div>
                 
-                <div class="tech-stack">
-                    <span class="tech-item">Mobile Security</span>
-                    <span class="tech-item">Chipset Technology</span>
-                    <span class="tech-item">5G Networks</span>
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div>
+                            <h3 class="event-title">Game On with Nord 5</h3>
+                            <span class="event-date">2024</span>
+                        </div>
+                    </div>
+                    
+                    <p class="event-description">
+                        Participated in the Nord 5 gaming competition, focusing on mobile gaming technology and security considerations in mobile platforms.
+                    </p>
+                    
+                    <div class="tech-stack">
+                        <span class="tech-item">Mobile Gaming</span>
+                        <span class="tech-item">Security</span>
+                        <span class="tech-item">Competition</span>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-header">
+                        <div class="event-icon">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <div>
+                            <h3 class="event-title">MediaTek Dimensity Tech Event</h3>
+                            <span class="event-date">June 20, 2025</span>
+                        </div>
+                    </div>
+                    
+                    <p class="event-description">
+                        Attended the exclusive MediaTek Dimensity event focused on cutting-edge mobile technology and chipset innovation. Explored security architectures for next-generation mobile devices.
+                    </p>
+                    
+                    <div class="tech-stack">
+                        <span class="tech-item">Mobile Security</span>
+                        <span class="tech-item">Chipset Technology</span>
+                        <span class="tech-item">5G Networks</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Section -->
+    <section id="youtube" class="youtube-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">LATEST CONTENT</h2>
+                <p class="section-subtitle">Check out my latest cybersecurity insights and tutorials</p>
+            </div>
+            
+            <div class="youtube-container">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/Uz7LcCjLzBc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                
+                <div class="youtube-cta">
+                    <a href="https://www.youtube.com/channel/UCUz7LcCjLzBc" target="_blank" class="btn" style="background: var(--accent); border-color: var(--accent);">
+                        <i class="fab fa-youtube"></i> SUBSCRIBE TO MY CHANNEL
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-comment"></i> SUGGEST A TOPIC
+                    </a>
                 </div>
             </div>
         </div>
@@ -1030,6 +1201,9 @@
                 </a>
                 <a href="https://www.instagram.com/_whois_akansh/" target="_blank">
                     <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/UCUz7LcCjLzBc" target="_blank">
+                    <i class="fab fa-youtube"></i>
                 </a>
                 <a href="mailto:pandayakansh09@gmail.com">
                     <i class="fas fa-envelope"></i>
